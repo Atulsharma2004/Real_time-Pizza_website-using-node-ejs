@@ -1,0 +1,28 @@
+<div class=''>
+    <form action="/admin/menus" method="POST" class='m-auto w-full max-w-md p-3 shadow-2xl flex flex-col bg-gray-100'>
+        <% if(messages.error) { %>
+            <span class="text-red-500 text-sm">
+                <%= messages.error %>
+            </span>
+            <% } %>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class='bg-gray-300 p-1 my-1 rounded'
+                    value="<%= messages.name %>" autocomplete="name" placeholder="Enter the pizza's name..." />
+
+                <label for="image">Image</label>
+                <input type="text" name="image" id='image' class='bg-gray-300 p-1 my-1 rounded'
+                    value="<%= messages.image %>" autocomplete="image"
+                    placeholder="Enter the image string(Ex : with .jpg,.png,.jpeg, etc)" />
+
+
+                <label for="price" class='my-1'>Price</label>
+                <input type="text" name="price" id="price" class='bg-gray-300 p-1 my-1 rounded'
+                    value="<%= messages.price %>" autocomplete="price" placeholder="Enter the price of pizza..." />
+
+                <label for="size">Size</label>
+                <input type="text" name="size" id="size" class='bg-gray-300 p-1 my-1 rounded'
+                    value="<%= messages.size %>" autocomplete="size" placeholder="Enter the size of pizza..." />
+
+                <button type="submit" class="btn-hero rounded-full my-2 py-2 ">Save</button>
+    </form>
+</div>

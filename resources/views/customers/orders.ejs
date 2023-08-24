@@ -1,0 +1,58 @@
+<section class="orders light-section">
+    <div class="container mx-auto pt-12 px-16">
+        <h1 class="font-bold text-lg mb-4">All Orders</h1>
+
+        <% if(messages.success) { %>
+            <div id="success-alert" class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3"
+                role="alert">
+                <i class="fa-solid fa-bell"></i>
+                <p class="ml-2">Order placed successfully</p>
+                <%= messages.success%>
+            </div>
+            <% } %>
+
+                <table class="w-full table-auto bg-white">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2 text-left">Orders</th>
+                            <th class="px-4 py-2 text-left">Phone</th>
+                            <th class="px-4 py-2 text-left">Address</th>
+                            <th class="px-4 py-2 text-left">Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% if(orders.length) { %>
+                            <% orders.forEach((order)=> { %>
+                                <tr>
+                                    <td class="border px-4 py-2">
+                                        <a class="link" href="/customer/orders/<%= order._id%>">
+                                            <%= order._id %>
+                                        </a>
+                                    </td>
+
+                                    <td class="border px-4 py-2">
+                                        <a href="/">
+                                            <%= order.phone %>
+                                        </a>
+                                    </td>
+
+                                    <td class="border px-4 py-2">
+                                        <%= order.address %>
+                                    </td>
+                                    <td class="border px-4 py-2">
+                                        <!-- <%= moment(order.address).format('hh:mm A') %> -->
+                                        <% const formattedCreatedAt=moment(order.createdAt).format('HH:mm A'); %>
+                                            <%= formattedCreatedAt %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                    <% } else {%>
+                                        <tr>
+                                            <td class="p-4"><span>No Orders Found!</span></td>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+                </table>
+    </div>
+</section>
