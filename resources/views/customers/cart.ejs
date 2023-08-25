@@ -2,7 +2,7 @@
 
     <% if(session.cart){ %>
 
-        <div class="order container mx-auto px-8 w-1/2">
+        <div class="order container mx-auto px-8 xl:w-1/2">
             <div class="flex items-center border-b border-gray-300 pb-4">
                 <i class="fa-solid fa-cart-arrow-down text-2xl pt-2"></i>
                 <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
@@ -13,8 +13,8 @@
                     <div class="flex items-center my-8">
                         <img class="w-24" src="/img/<%= pizza.item.image %>" alt="" />
                         <div class="ml-4 flex-1">
-                            <h1>pizza.item.name</h1>
-                            <span>pizza.item.size</span>
+                            <h1><%=pizza.item.name%></h1>
+                            <span><%=pizza.item.size%></span>
                         </div>
                         <span class="flex-1">
                             <%= pizza.qty %> Pcs

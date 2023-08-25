@@ -8,7 +8,7 @@ body{
     color: $dark;
 }
 
-nav li:last-child a{
+nav li .cartLogo{
     height: 40px;
     width: 50px;
     background: $primary;
@@ -216,4 +216,27 @@ section.status{
     font-size: 14px;
     float: right;
     margin-top: 8px;
+}
+
+@media(max-width:1060px){
+    .container{
+        max-width: 90%;
+    }
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media(max-width:768px){
+    .status-box ul li span:before{
+        font-size: 34px;
+    }
+
+    .home img{
+        height:25vh;
+        max-width: 100vw;
+        
+    }
 }

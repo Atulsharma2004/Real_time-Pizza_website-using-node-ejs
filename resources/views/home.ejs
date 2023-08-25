@@ -4,7 +4,7 @@
             <!-- <img src="/img/pizza5.avif" alt=""> -->
             <div class="text-cont px-3">
                 <h6 class="text-lg"><em>Are you hungry?</em></h6>
-                <h1 class="text-5xl font-bold">Don't Wait !</h1>
+                <h1 class="text-4xl md:text-5xl font-bold">Don't Wait !</h1>
                 <button class=" btn-hero px-6 py-2 rounded-full text-white font-bold mt-4">Order Now</button>
             </div>
         </div>
@@ -13,10 +13,10 @@
 
 <section class="menu container mx-auto py-8 px-2">
     <h1 class="text-xl font-bold mb-8">Delicious Pizza's</h1>
-    <div class="grid grid-cols-4  gap-16 container mx-auto px-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-16 container mx-auto px-2">
 
         <% pizzas.forEach(function(pizza){ %>
-            <div class="">
+            <div class="home">
                 <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="pizza1_img">
                 <div class="text-center">
                     <h2 class="mb-4 text-lg">

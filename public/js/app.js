@@ -155,7 +155,6 @@ updateStatus(order);
 //socket
 
 var socket = io();
-(0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)(socket);
 
 //join room
 
@@ -164,6 +163,7 @@ if (order) {
 }
 var adminAreaPath = window.location.pathname;
 if (adminAreaPath.includes('admin')) {
+  (0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)(socket);
   socket.emit('join', 'adminRoom');
 }
 socket.on('orderUpdated', function (data) {
@@ -472,6 +472,7 @@ Buffer._augment = function (arr) {
   arr.__proto__ = Buffer.prototype
   return arr
 }
+
 
 function from (that, value, encodingOrOffset, length) {
   if (typeof value === 'number') {

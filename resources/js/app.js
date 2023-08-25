@@ -5,6 +5,7 @@ import moment from "moment";
 let addToCart = document.querySelectorAll('.add-to-cart');
 let cartCounter = document.querySelector('#cartCounter');
 
+
 function updateCart(pizza) {
     axios.post('/update-cart', pizza).then((res) => {
         cartCounter.innerText = res.data.totalQty;
@@ -81,7 +82,8 @@ updateStatus(order);
 //socket
 
 let socket = io();
-initAdmin(socket);
+
+
 
 //join room
 
@@ -91,6 +93,7 @@ if (order) {
 
 let adminAreaPath = window.location.pathname;
 if (adminAreaPath.includes('admin')) {
+    initAdmin(socket);
     socket.emit('join', 'adminRoom');
 }
 
